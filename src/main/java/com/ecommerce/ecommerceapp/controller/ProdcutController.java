@@ -5,9 +5,9 @@ import com.ecommerce.ecommerceapp.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class ProdcutController {
@@ -16,11 +16,21 @@ public class ProdcutController {
     @Autowired
     ProductService productService;
 
-    @PostMapping
+    @PostMapping("/addProduct")
     public String addProduct(@RequestBody Product product){
      productService.addProduct(product);
         log.info("product added successfully");
         return "product added successfully";
 
+    }
+    @GetMapping("/getAllProducts")
+    public List<Product> getAllProcuts(){
+        log.info("getting all the products");
+        return productService.getAllProducts();
+    }
+    @GetMapping("/getProductById/{cid}")
+    public List<Product> getProductById(@PathVariable List<Integer> cid){
+        log.info("get products by cid");
+        return productService.getProductById(cid);
     }
 }

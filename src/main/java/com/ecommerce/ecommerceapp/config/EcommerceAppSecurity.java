@@ -27,6 +27,8 @@ public class EcommerceAppSecurity{
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers("/getAllUser").permitAll()
                         .requestMatchers("/userAuthentication","/deleteAllUser").authenticated()
+                        .requestMatchers("/addCategory","/getAllCategory","/getCategoryById**").authenticated()
+                        .requestMatchers("/addProduct","/getAllProducts","/getProductById**").authenticated()
                 ).httpBasic(withDefaults());
         return http.build();
     }
