@@ -25,14 +25,14 @@ public class EcommerceAppSecurity{
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("/getAllUser").permitAll()
-                        .requestMatchers("/userAuthentication","/deleteAllUser").authenticated()
+                        .requestMatchers("/userAuthentication","/deleteAllUser","/getAllUser").authenticated()
                         .requestMatchers("/addCategory","/getAllCategory","/getCategoryById**").authenticated()
                         .requestMatchers("/addProduct","/getAllProducts","/getProductById**").authenticated()
+                        .anyRequest().permitAll()
                 ).httpBasic(withDefaults());
         return http.build();
     }
-    // User Creation
+/*    // User Creation
     //@Bean
     public UserDetailsService userDetailsService(PasswordEncoder encoder) {
 
@@ -50,8 +50,8 @@ public class EcommerceAppSecurity{
         return new InMemoryUserDetailsManager(admin, user);
     }
     // Password Encoding
-    @Bean
+    //@Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
+    }*/
 }

@@ -1,5 +1,6 @@
 package com.ecommerce.ecommerceapp.entity;
 
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,5 +22,6 @@ public class Product {
     private int pPrice;
     private int pDiscount;
     private int pQuantity;
+    @ManyToOne
     private Category category;
 }

@@ -24,14 +24,30 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-	implementation 'ch.qos.logback:logback-classic'  // Or a compatible version
+
+	final def dependency = implementation 'org.springframework.boot:spring-boot-starter:3.4.2'
+	dependency
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:3.4.2'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:3.4.2'
+	implementation 'ch.qos.logback:logback-classic'
 	implementation 'ch.qos.logback:logback-core'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: '3.4.1'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-logging', version: '3.4.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.4.2'
+	implementation 'org.springframework.boot:spring-boot-starter-security:3.4.2'
+	implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: '3.4.2'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-logging', version: '3.4.2'
+	implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.0'
+	implementation group: 'org.hibernate', name: 'hibernate-core', version: '6.6.1.Final', ext: 'pom'
+	implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.2.0'
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '3.2.0', ext: 'pom'
+
+
+
+
+
+
 
 
 	compileOnly 'org.projectlombok:lombok'
