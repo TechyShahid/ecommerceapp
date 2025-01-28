@@ -1,6 +1,6 @@
 package com.ecommerce.ecommerceapp.service;
 
-import com.ecommerce.ecommerceapp.dao.CategoryDAO;
+import com.ecommerce.ecommerceapp.dao.CategoryRepository;
 import com.ecommerce.ecommerceapp.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class CategoryService {
     @Autowired
-    CategoryDAO categoryDAO;
+    CategoryRepository categoryDAO;
 
     public void addCategory(Category category){
         categoryDAO.save(category);
