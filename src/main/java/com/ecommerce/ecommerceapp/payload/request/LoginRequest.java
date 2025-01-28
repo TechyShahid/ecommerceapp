@@ -1,5 +1,6 @@
-package com.ecommerce.ecommerceapp.entity;
+package com.ecommerce.ecommerceapp.payload.request;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDetails {
-    private String user;
+public class LoginRequest {
+    @NotBlank
+    private String username;
+
+    @NotBlank
     private String password;
 }

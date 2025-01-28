@@ -15,7 +15,6 @@ public class UserService {
     @Autowired
     UserDAO userDAO;
     public User saveUser(User user){
-        log.info(user.getName()+"==="+user.getEmail());
         userDAO.save(user);
         return user;
     }
@@ -25,4 +24,5 @@ public class UserService {
     public void deleteAllUsers(){
         userDAO.deleteAll();
     }
+
 }

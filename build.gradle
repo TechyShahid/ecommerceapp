@@ -39,11 +39,9 @@ dependencies {
 	implementation group: 'org.hibernate', name: 'hibernate-core', version: '6.6.1.Final', ext: 'pom'
 	implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.2.0'
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.8.3'
-
-
-
-
-
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
 
 
 	compileOnly 'org.projectlombok:lombok'
