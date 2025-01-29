@@ -59,7 +59,6 @@ public class EcommerceAppSecurity{
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("/userAuthentication","/deleteAllUser","/getAllUser").authenticated()
                         .requestMatchers("/addCategory","/getAllCategory","/getCategoryById**").authenticated()
                         .requestMatchers("/addProduct","/getAllProducts","/getProductById**").authenticated()
                         .requestMatchers("/api/auth/**").permitAll()
