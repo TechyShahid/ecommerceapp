@@ -1,5 +1,6 @@
 package com.ecommerce.ecommerceapp.controller;
 
+import com.ecommerce.ecommerceapp.aop.LogExecutionTime;
 import com.ecommerce.ecommerceapp.config.jwt.JwtUtils;
 import com.ecommerce.ecommerceapp.config.service.UserDetailsImpl;
 import com.ecommerce.ecommerceapp.dao.RoleRepository;
@@ -51,6 +52,7 @@ public class AuthController {
     @Autowired
     JwtUtils jwtUtils;
 
+    @LogExecutionTime
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -74,6 +76,7 @@ public class AuthController {
                         roles));
     }
 
+    @LogExecutionTime
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         if (authService.existsByUsername(signUpRequest.getUsername())) {

@@ -1,5 +1,6 @@
 package com.ecommerce.ecommerceapp.controller;
 
+import com.ecommerce.ecommerceapp.aop.LogExecutionTime;
 import com.ecommerce.ecommerceapp.entity.Category;
 import com.ecommerce.ecommerceapp.payload.response.MessageResponse;
 import com.ecommerce.ecommerceapp.service.CategoryService;
@@ -17,7 +18,7 @@ public class CategoryController {
 
     @Autowired
     CategoryService categoryService;
-
+    @LogExecutionTime
     @PostMapping("/addCategory")
     public ResponseEntity<?> addCategory(@RequestBody Category category){
         log.info("add category controller");
@@ -31,6 +32,7 @@ public class CategoryController {
                     .body(new MessageResponse("Exception while saving the category:  "+e.getMessage()));
         }
     }
+    @LogExecutionTime
     @GetMapping("/getAllCategory")
     public ResponseEntity<?> getAllCategory(){
        try {
@@ -49,6 +51,7 @@ public class CategoryController {
                    .body(new MessageResponse("Exception while getting the category:  "+e.getMessage()));
        }
     }
+    @LogExecutionTime
     @GetMapping("/getCategoryById/{cid}")
     public ResponseEntity<?> getCategoryById(@PathVariable Integer cid) {
         log.info("getting category by Id");
