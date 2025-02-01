@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LogExecutionTimeAspect {
     Logger log = LoggerFactory.getLogger(LogExecutionTimeAspect.class);
-    @Around("@annotation(com.ecommerce.ecommerceapp.controller)")
+    @Around("@annotation(com.ecommerce.ecommerceapp.aop)")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         final long start = System.currentTimeMillis();
 
